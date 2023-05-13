@@ -224,6 +224,7 @@ class TakenQuizListView(ListView):
     template_name = 'room/taken_quiz.html'
 
 
+
     def get_queryset(self):
         queryset = self.request.user.taken_quizzes \
                 .select_related('quiz') \
