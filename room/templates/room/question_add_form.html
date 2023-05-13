@@ -1,0 +1,60 @@
+{% extends 'room/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'quiz_change_list' %}">My Quizzes</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Add a new Question</li>
+    </ol>
+  </nav>
+  <h2 class="mb-3">Add a new Question</h2>
+
+  {%  if ques_type == 'mcq' %}
+    <div class="row">
+    <div class="col-md-6 col-sm-8 col-12">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ ques_form|crispy }}
+        {{ ans_form|crispy }}
+        {{ ans_form|crispy }}
+        {{ ans_form|crispy }}
+        {{ ans_form|crispy }}
+        {{ marks_form|crispy }}
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'quiz_change_list' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+      </form>
+    </div>
+    </div>
+  {% elif ques_type == 'numerical' %}
+    <div class="row">
+    <div class="col-md-6 col-sm-8 col-12">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ ques_form|crispy }}
+        {{ num_form|crispy }}
+        {{ marks_form|crispy }}
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'quiz_change_list' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+      </form>
+    </div>
+    </div>
+  {% else %}
+    <div class="row">
+    <div class="col-md-6 col-sm-8 col-12">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ ques_form|crispy }}
+        {{ bool_form|crispy }}
+        {{ marks_form|crispy }}
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'quiz_change_list' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+      </form>
+    </div>
+    </div>
+
+  {% endif %}
+
+  
+{% endblock %}

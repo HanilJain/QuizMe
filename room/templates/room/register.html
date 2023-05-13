@@ -1,0 +1,23 @@
+{%extends "room/base.html" %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+  <div class="content-Section">
+    <!--takes data in POST format and gives additional security-->
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">WELCOME !</legend>
+            {{form | crispy }}<!-- form.as_p this render the page in paragraph from-->
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+    </form>
+    <a href="{% provider_login_url 'google' %}">Login With Google</a>
+  <div class="border-top pt3">
+    <small class="text-muted">Already Have An Account ? <a class="ml-2" href="#">Log In</a> </small>
+  </div>
+  </div>
+{%endblock%}

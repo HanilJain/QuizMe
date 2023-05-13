@@ -1,0 +1,28 @@
+{% extends 'room/base.html' %}
+
+{% block content %}
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Quiz</th>
+          <th>Length</th>
+          <th>Owner</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for quiz in quizzes %}
+          <tr>
+            <td class="align-middle">{{ quiz.quiz_name }}</td>
+            <td class="align-middle">{{ total_questions }} Questions</td>
+            <td class="align-middle">{{ quiz.owner }}</td>
+            <td class="text-right">
+              <a href="{% url 'take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

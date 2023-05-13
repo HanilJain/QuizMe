@@ -1,0 +1,23 @@
+{% extends 'room/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+ <!--  <div class="progress mb-3">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progress }}%"></div>
+  </div> -->
+  <h2 Required name="quiz_name" class="mb-3">{{ quiz.quiz_name }}</h2>
+  <p Required name="question_content" class="lead">{{ question.question_content }}</p>
+
+  <div class="container">
+    <div class="row">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Next →</button>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

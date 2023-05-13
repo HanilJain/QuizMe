@@ -1,0 +1,26 @@
+
+{% extends 'room/base.html' %}
+{% block content %}
+    <h1>High Scores</h1>
+    {% with total_scores=scores|length %}
+
+        <table class="table mb-0">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for score in score_list %}
+                    {% for user in user_ids %}
+                        <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ score.score }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+        </table>
+    {% endwith %}
+{% endblock %}
