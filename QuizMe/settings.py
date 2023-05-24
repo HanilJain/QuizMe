@@ -12,11 +12,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+import environ 
+
+env = environ.Env()
+environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(BASE_DIR / '.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -30,8 +32,7 @@ load_dotenv(BASE_DIR / '.env')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = "django-insecure-9yk(cbc=yl7m(cpy-5i7_n6@gvgn^_k_q=$tj5$^24g2t=7v6@"
-SECRET_KEY = os.getenv('SECRET_KEY')
-
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
@@ -39,8 +40,8 @@ DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
 #ALLOWED_HOSTS = ['quizme.azurewebsites.net']
 
-#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
-#CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
 
 SECURE_SSL_REDIRECT = \
@@ -129,10 +130,11 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DBNAME'),
-        'HOST': os.environ.get('DBHOST'),
-        'USER': os.environ.get('DBUSER'),
-        'PASSWORD': os.environ.get('DBPASS'),
+        'NAME': 'quizme-db',
+        'USER': 'hanil',
+        'PASSWORD': '123',
+        'HOST': '',
+        'PORT': '5432',
         'OPTIONS': {'sslmode': 'require'},
     }
 }

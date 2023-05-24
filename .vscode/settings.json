@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/70fc2f68-7ab1-4a81-a87b-18001bcb81f2/resourceGroups/QuizMe-group/providers/Microsoft.Web/sites/QuizMe",
+    "appService.deploySubpath": "."
+}
