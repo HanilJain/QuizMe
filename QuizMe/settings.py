@@ -32,7 +32,7 @@ SECRET_KEY="django-insecure-9yk(cbc=yl7m(cpy-5i7_n6@gvgn^_k_q=$tj5$^24g2t=7v6@"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['quizme.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS=['https://quizme.azurewebsites.net', 'https://www.quizme.azurewebsites.net']
 
