@@ -5,5 +5,5 @@ gunicorn==20.1.0
 whitenoise
 crispy_bootstrap4
 django-allauth
-django-crispy-forms==1.10.0
+django-crispy-forms
 xlwt
