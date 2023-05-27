@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+CSRF_TRUSTED_ORIGINS = ['https://quizme.azurewebsites.net', 'https://www.quizme.azurewebsites.net']
 
+SECURE_SSL_REDIRECT = 1
+if SECURE_SSL_REDIRECT:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -123,6 +127,7 @@ DATABASES = {
         'PASSWORD': 'Shirshj123#',
         'HOST': 'quizme-db.postgres.database.azure.com',
         'PORT': '5432',
+        'OPTIONS' : {'sslmode' : 'require' , } ,
         }
 }
 # Password validation
