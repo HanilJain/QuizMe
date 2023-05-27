@@ -34,8 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS=['https://quizme.azurewebsites.net', 'https://www.quizme.azurewebsites.net']
-
 
 
 # Application definition
