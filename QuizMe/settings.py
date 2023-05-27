@@ -42,6 +42,7 @@ CSRF_TRUSTED_ORIGINS=['https://quizme.azurewebsites.net', 'https://www.quizme.az
 
 INSTALLED_APPS = [
     'room',
+    "whitenoise.runserver_nostatic",
     'crispy_bootstrap4',
     'crispy_forms',
     'allauth',
@@ -121,10 +122,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'quizme-db',
         'USER': 'hanil@quizme-db',
-        'PASSWORD': '123',
+        'PASSWORD': 'Shirshj123#',
         'HOST': 'quizme-db.postgres.database.azure.com',
         'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'},
         }
 }
 # Password validation
@@ -162,7 +162,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
