@@ -127,7 +127,7 @@ DATABASES = {
         'PASSWORD': 'Shirshj123#',
         'HOST': 'quizme-db.postgres.database.azure.com',
         'PORT': '5432',
-        'OPTIONS' : {'sslmode' : 'require' , } ,
+        'OPTIONS' : {'sslmode' : 'require'} ,
         }
 }
 # Password validation
