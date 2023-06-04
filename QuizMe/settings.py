@@ -112,8 +112,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'quizmedb',
-        'USER': 'juniorseafowl2@quizmedb',
-        'PASSWORD': 'Z_2bWt_bbYqsVgxfgnHh0g',
+        'USER': 'hanil@quizmedb',
+        'PASSWORD': 'Shirshj123#',
         'HOST': 'quizmedb.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS' : {'sslmode' : 'require'} ,
